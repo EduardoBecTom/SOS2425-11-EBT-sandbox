@@ -3,13 +3,15 @@ const cool = require('cool-ascii-faces');
 const app = express();
 const PORT = 16078;
 
-app.get('/', (request, response) =>{
+app.use("/",express.static('./public'));
+
+app.get('/hello', (request, response) =>{
     response.send('Hello from the server!');
 }
 );
 
 app.get('/cool', (request, response) =>{
-    response.send(cool());
+    response.send("Este es Mario literal : <br>"+cool()+"<br> Este es antonio literal : <br>"+cool());
 }
 );
 
